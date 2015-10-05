@@ -1,0 +1,58 @@
+{
+	"name": "Johnson Family Home",
+	"type": "residential",
+	"id": "10",
+	"devices": [
+		{
+			"id": "12859a82b29c",
+			"name": "Ceiling Light",
+			"type": "light",
+			"room": "1bcd289fe02",
+			"states": ["on", "off"],
+			"state": "off",
+			"dimState": 89,
+			"dims": true,
+			"location": "10"
+		},
+		{
+			"id": "15b6898c982",
+			"name": "Lamp",
+			"type": "light",
+			"room": "1bcd289fe02",
+			"states": ["on", "off"],
+			"state": "off",
+			"dims": false,
+			"location": "10"
+		},
+		{
+			"id": "85924c9581dba",
+			"name": "Main Thermostat",
+			"type": "thermostat",
+			"room": "2cfab90d25",
+			"states": ["heating", "cooling", "recirculating", "off"],
+			"state": "heating",
+			"currentTemperature": 64,
+			"goalTemperature": 68,
+			"location": "10"
+		}
+	],
+	"rooms": [
+		{
+			"id": "1bcd289fe02",
+			"name": "Master Bedroom",
+			"devices": [
+				"12859a82b29c",
+				"15b6898c982"
+			],
+			"location": "10"
+		},
+		{
+			"id": "2cfab90d25",
+			"name": "Hallway",
+			"devices": [
+				"85924c9581dba"
+			],
+			"location": "10"
+		}
+	]
+}

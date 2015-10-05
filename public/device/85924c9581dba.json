@@ -1,0 +1,11 @@
+{
+	"id": "85924c9581dba",
+	"name": "Main Thermostat",
+	"type": "thermostat",
+	"room": "2cfab90d25",
+	"states": ["heating", "cooling", "recirculating", "off"],
+	"state": "heating",
+	"currentTemperature": 64,
+	"goalTemperature": 68,
+	"location": "10"
+}

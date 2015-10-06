@@ -7,7 +7,7 @@ I used a simple Node server to serve the files. If you have Node.js installed, s
 If you'd rather just server the files using apache or some other similar item, simply set the web server's root to the `public/` directory of this project.
 
 ## Events
-It is very easy to extend the functionality and/or subscribe to a given event. Using the Jive-JS Fabric (documentation (here)[https://github.com/jive/JiveJS-Commons/blob/master/docs/fabric.md])  as the mechanism to send notifications of events.
+It is very easy to extend the functionality and/or subscribe to a given event. Using the [Jive-JS Fabric](https://github.com/jive/JiveJS-Commons/blob/master/docs/fabric.md) as the mechanism to send notifications of events.
 
 ### Subscribing to events
 To subscribe to a given event you use the `getFabric` method on the `automation` global. The `getFabric` method returns an instance of the Jive Fabric. Use the `.subscribe` method on the Fabric in order to get events.

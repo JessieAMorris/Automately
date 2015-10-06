@@ -84,6 +84,10 @@
 				this.fabric = fabric;
 			},
 
+			getFabric: function getFabric() {
+				return this.fabric;
+			},
+
 			publish: function publish(data) {
 				if(this.fabric !== null) {
 					this.fabric.publish(data);

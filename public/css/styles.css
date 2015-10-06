@@ -1,0 +1,24 @@
+.lightStatus {
+	width: 1em;
+	height: 1em;
+	border-radius: 1em;
+	float: left;
+	margin-right: 1em;
+}
+
+.lightStatus.on {
+	background-color: #abffa5;
+}
+
+.lightStatus.off {
+	background-color: #ffb1a5;
+}
+
+.deviceContainer.light .deviceName {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.deviceContainer.light .deviceControl {
+	display: inline-block;
+}

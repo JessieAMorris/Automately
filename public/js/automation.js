@@ -13,6 +13,7 @@
 
 		var rooms = {};
 		var devices = {};
+		var fabric = null;
 
 		var automation = {
 			fetchAutomationLocation: function fetchAutomationLocation(locationId) {
@@ -79,19 +80,44 @@
 				return devices;
 			},
 
+			setFabric: function setFabric(fabric) {
+				this.fabric = fabric;
+			},
+
+			publish: function publish(data) {
+				if(this.fabric !== null) {
+					this.fabric.publish(data);
+				}
+			},
+
 			setTemperature: function setValue(deviceId, newTemperature) {
-				// Will fail ever time since the server doesn't handle POSTs currently
+				var that = this;
+
+				// Will fail every time since the server doesn't handle POSTs currently
 				return doPost("/device/" + deviceId + ".json", {goalTemperature: newTemperature}).fail(function() {
 					devices[deviceId].goalTemperature = newTemperature;
+
+					that.publish({
+						urn: "thermostats:" + deviceId + ":updated",
+						data: devices[deviceId]
+					});
 				});
 			},
 
 			toggleLight: function toggleLight(deviceId) {
+				var that = this;
+
 				var lightState = devices[deviceId].state;
 				lightState = (lightState === "off") ? "on" : "off";
 
-				return doPost("/device/" + deviceId + ".json", {state: state}).fail(function() {
-					devices[deviceId].state = state;
+				// Will fail every time since the server doesn't handle POSTs currently
+				return doPost("/device/" + deviceId + ".json", {state: lightState}).fail(function() {
+					devices[deviceId].state = lightState;
+
+					that.publish({
+						urn: "lights:" + deviceId + ":updated",
+						data: devices[deviceId]
+					});
 				});
 			}
 		};

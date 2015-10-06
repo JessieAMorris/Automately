@@ -98,7 +98,7 @@
 				var that = this;
 
 				// Will fail every time since the server doesn't handle POSTs currently
-				return doPost("/device/" + deviceId + ".json", {goalTemperature: newTemperature}).fail(function() {
+				return doPost("/device/" + deviceId + ".json", {goalTemperature: newTemperature}).always(function() {
 					devices[deviceId].goalTemperature = newTemperature;
 
 					that.publish({
@@ -115,7 +115,7 @@
 				lightState = (lightState === "off") ? "on" : "off";
 
 				// Will fail every time since the server doesn't handle POSTs currently
-				return doPost("/device/" + deviceId + ".json", {state: lightState}).fail(function() {
+				return doPost("/device/" + deviceId + ".json", {state: lightState}).always(function() {
 					devices[deviceId].state = lightState;
 
 					that.publish({

@@ -75,3 +75,5 @@ The published event data is as follows:
 ```
 
 All temperatures are in degrees Fahrenheit.
+
+foo
